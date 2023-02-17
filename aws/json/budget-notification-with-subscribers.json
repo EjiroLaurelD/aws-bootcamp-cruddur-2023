@@ -1,0 +1,18 @@
+[
+    {
+        "Notification": {
+            "ComparisonOperator": "GREATER_THAN",
+            "NotificationType": "ACTUAL",
+            "Threshold": 10,
+            "ThresholdType": "PERCENTAGE"
+        },
+        "Subscribers": [
+            {
+                "Address": "dafelaurele@gmail.com",
+                "SubscriptionType": "EMAIL"
+            }
+        ]
+    }
+  ]
+
+
