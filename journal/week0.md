@@ -1,9 +1,12 @@
 # Week 0 — Billing and Architecture
 ### Recreate the Logical Architectural Diagram
-![Cruddur logical architectural diagram](assets/logical-app-diagram.png)  
-click [Lucid chart](https://lucid.app/lucidchart/d5f1dd8d-9437-4ee3-9173-d97bc1245cd5/edit?invitationId=inv_c58d319e-0317-4efd-8fc1-54fcffa72612&page=0_0#) to preview Logical diagram on lucid chart.
+![Cruddur logical architectural diagram](assets/logical-app-diagram.jpg)  
+
+## click [Lucid chart](https://lucid.app/lucidchart/d5f1dd8d-9437-4ee3-9173-d97bc1245cd5/edit?invitationId=inv_c58d319e-0317-4efd-8fc1-54fcffa72612&page=0_0#) to preview Logical diagram.
+## click [Lucid chart](https://lucid.app/lucidchart/6f766600-3250-4432-8946-2674134f611b/edit?invitationId=inv_f0aba7cf-4dd9-4fcb-9f50-13584e32682d&page=0_0#) to preview conceptual diagram on lucid chart
+
 ![Conceptual architefcture framework](assets/conceptual-app.jpg)  
-click [Lucid chart](https://lucid.app/lucidchart/6f766600-3250-4432-8946-2674134f611b/edit?invitationId=inv_f0aba7cf-4dd9-4fcb-9f50-13584e32682d&page=0_0#) to preview conceptual diagram on lucid chart
+
 ![Conceptual napkin drawing](assets/conceptual-napkin.jpg)  
 
 ### Installation processes
@@ -35,7 +38,7 @@ aws sts get-caller-identity --query Account --output text
 export AWS_ACCOUNT_ID="********2163"
 gp env AWS_ACCOUNT_ID="********2163"
 ```
-- I created a [budget.json](https://github.com/EjiroLaurelD/aws-bootcamp-cruddur-2023/blob/main/aws/json/budget.json) file and a [budget-notification-with-subscribers](https://github.com/EjiroLaurelD/aws-bootcamp-cruddur-2023/blob/main/aws/json/budget-notification-with-subscribers.json) file
+- I created a [budget.json](https://github.com/EjiroLaurelD/aws-bootcamp-cruddur-2023/blob/main/aws/json/budet.json) file and a [budget-notification-with-subscribers](https://github.com/EjiroLaurelD/aws-bootcamp-cruddur-2023/blob/main/aws/json/budget-notification-with-subscribers.json) file
 - I however didn't run the budget commands as i already had 2 budgets set on my account. Trying to stay within free tier.
 - Below is the command to run budget on the cli jsut incase
 ```bash
