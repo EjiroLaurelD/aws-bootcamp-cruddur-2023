@@ -1,10 +1,10 @@
 # Week 0 — Billing and Architecture
 ### Recreate the Logical Architectural Diagram
-![Cruddur logical architectural diagram](_docs/assets/week0/logical-app-diagram.pdf)  
+![Cruddur logical architectural diagram](assets/week0/logical-app-diagram.png)  
 click [Lucid chart](https://lucid.app/lucidchart/d5f1dd8d-9437-4ee3-9173-d97bc1245cd5/edit?invitationId=inv_c58d319e-0317-4efd-8fc1-54fcffa72612&page=0_0#) to preview Logical diagram on lucid chart.
-![Conceptual architefcture framework](_docs/assets/week0/conceptual-app.jpg)  
+![Conceptual architefcture framework](assets/week0/conceptual-app.jpg)  
 click [Lucid chart](https://lucid.app/lucidchart/6f766600-3250-4432-8946-2674134f611b/edit?invitationId=inv_f0aba7cf-4dd9-4fcb-9f50-13584e32682d&page=0_0#) to preview conceptual diagram on lucid chart
-![Conceptual napkin drawing](_docs/assets/week0/conceptual-napkin.jpg)  
+![Conceptual napkin drawing](/assets/week0/conceptual-napkin.jpg)  
 
 ### Installation processes
 - I installed AWS CLI in gitpod and added the configuration block to the the gitpod yml file as instructed  
