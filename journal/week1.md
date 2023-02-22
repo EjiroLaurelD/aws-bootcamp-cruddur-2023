@@ -1,5 +1,5 @@
 # Week 1 — App Containerization
-- I started the weeks project by creating my docker files in the front and back ends
+- I started the week project by creating my docker files in the front and back ends
 -  I cd'd into the backend directory and ran the command `pip3 Install -r requirements.txt` to set up my environment
 - I added the environment variables and ran the python command to start flask
 `export FRONTEND_URL="*"`
