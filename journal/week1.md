@@ -78,4 +78,6 @@ networks:
 - Here i edited the backend services file, home-activities.py to edit Handler "Andrew Brown" to my name and "Cloud is fun" to "Cloud is very fun"
 ![homepage](assets/editedbackend.png)  
 
-
+## Created new files for Notification on the back end and front end 
+- Here i eidted the files following the video tutorial
+![notifications](assets/notifications.png)  
