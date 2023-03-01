@@ -57,3 +57,7 @@ tracer = trace.get_tracer(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
 ```
+
+
+I ran npm install nmp i
+then docker compose up
