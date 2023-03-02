@@ -12,7 +12,7 @@ I configured OTEL (open telemetry) to send to honeycomb
       OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
       ```
  
-I Installed these packages to instrument a Flask app with OpenTelemetry:
+I Installed these packages to instrument a Flask app with OpenTelemetry on my terminal:
 ```
 pip install opentelemetry-api \
     opentelemetry-sdk \
@@ -33,7 +33,7 @@ opentelemetry-instrumentation-requests
 I installed the dependencies using 
 `pip install -r requirements.txt` 
 
-I added the following to apps.py
+I added the following to apps.py from Honeycomb
 ```
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
@@ -62,4 +62,8 @@ RequestsInstrumentor().instrument()
 I ran npm install nmp i
 then docker compose up
 
+
 I copied the codes from https://docs.honeycomb.io/getting-data-in/opentelemetry/python/  to create spans in home.activities file
+
+![honeycomb-trace](assets/trace.png)  
+![honeycomb-span](assets/span.png)  
