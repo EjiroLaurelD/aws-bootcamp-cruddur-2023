@@ -2,8 +2,8 @@
 
 I signed up on honeycomb and created an environment called bootcamp
 I got my api key and i exported it as an environment variable 
-export HONEYCOMB_API_KEY=jfGee1iAAyYLyudSwI9bWT
-gp env export HONEYCOMB_API_KEY=jfGee1iAAyYLyudSwI9bWT
+export HONEYCOMB_API_KEY=redacted
+gp env HONEYCOMB_API_KEY=redacted
 
 I configured OTEL (open telemetry) to send to honeycomb
       ```
@@ -21,7 +21,7 @@ pip install opentelemetry-api \
     opentelemetry-instrumentation-requests
 ```
 
-I added the follwoing to my requirement.txt file
+I added the following to my requirement.txt file
 ```
 opentelemetry-api 
 opentelemetry-sdk 
@@ -61,3 +61,4 @@ RequestsInstrumentor().instrument()
 
 I ran npm install nmp i
 then docker compose up
+honetcom python logs opentelemtry
