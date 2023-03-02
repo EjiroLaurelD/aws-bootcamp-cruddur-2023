@@ -13,7 +13,7 @@ I configured OTEL (open telemetry) to send to honeycomb
       ```
  
 I Installed these packages to instrument a Flask app with OpenTelemetry:
-```js
+```
 pip install opentelemetry-api \
     opentelemetry-sdk \
     opentelemetry-exporter-otlp-proto-http \
@@ -33,7 +33,7 @@ opentelemetry-instrumentation-requests
 I installed the dependencies using 
 `pip install -r requirements.txt` 
 
-I added the follwoing to apps.py
+I added the following to apps.py
 ```
 from opentelemetry import trace
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
@@ -61,4 +61,5 @@ RequestsInstrumentor().instrument()
 
 I ran npm install nmp i
 then docker compose up
-honetcom python logs opentelemtry
+
+I copied the codes from https://docs.honeycomb.io/getting-data-in/opentelemetry/python/  to create spans in home.activities file
