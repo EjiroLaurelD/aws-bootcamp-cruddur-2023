@@ -67,3 +67,51 @@ I copied the codes from https://docs.honeycomb.io/getting-data-in/opentelemetry/
 
 ![honeycomb-trace](assets/trace.png)  
 ![honeycomb-span](assets/span.png)  
+
+cd into back-end flask , create xray.json file 
+
+```
+{
+  "SamplingRule": {
+      "RuleName": "Cruddur",
+      "ResourceARN": "*",
+      "Priority": 9000,
+      "FixedRate": 0.1,
+      "ReservoirSize": 5,
+      "ServiceName": "Cruddur",
+      "ServiceType": "*",
+      "Host": "*",
+      "HTTPMethod": "*",
+      "URLPath": "*",
+      "Version": 1
+  }
+}
+```
+ Then I created xray on the terminal using code below
+ ```
+  xray create-group \
+   --group-name "Cruddur" \
+ --filter-expression "service(\"backend-flask\")"
+```
+
+ aws cli on my terminal and got this output
+i got this output
+
+![aws-tray](assets/xray.png)  
+
+I created sampling rules with the code
+`aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json`
+
+I added  xray-daemon to my docker compose file 
+```
+  xray-daemon:
+    image: "amazon/aws-xray-daemon"
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_REGION: "us-east-1"
+    command:
+      - "xray -o -b xray-daemon:2000"
+    ports:
+      - 2000:2000/udp
+```
