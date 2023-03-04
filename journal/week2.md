@@ -181,7 +181,13 @@ def rollbar_test():
     rollbar.report_message('Hello World!', 'warning')
     return "Hello World!"
 ```
-I added roll bar to my docker compose file then i ran `docker compose up`
+![rollbar](assets/hw.png)  
+
+- I added roll bar to my docker compose file 
 `ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"`
 
+- I ran docker compose up and observed the error in rollbar
+![rollbar](assets/hw.png)  
+![rollbar](assets/rollbar.png)  
+![rollbar](assets/rollbar2.png)  
 
