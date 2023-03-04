@@ -136,3 +136,52 @@ XRayMiddleware(app, xray_recorder)
 ![aws-tray](assets/trace1.png)  
 ![aws-tray](assets/tracemap.png)  
 ![aws-tray](assets/tracemap2.png)  
+
+
+- I Configured custom logger to send logs to CloudWatch Logs	
+![aws-cloutwatch](assets/cw1.png)  
+![aws-cloudwatch](assets/cw2.png)  
+![aws-cloudwatch](assets/cw3.png)  
+
+- I created a roll bar account and set up my token as an environment varialble
+```
+export ROLLBAR_ACCESS_TOKEN="redacted"
+gp env ROLLBAR_ACCESS_TOKEN="redacted"
+```
+- I integrated roll bar for error logging by adding the codes below to my app.py file
+```
+import os
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
+```
+```
+rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+@app.before_first_request
+def init_rollbar():
+    """init rollbar module"""
+    rollbar.init(
+        # access token
+        rollbar_access_token,
+        # environment name
+        'production',
+        # server root directory, makes tracebacks prettier
+        root=os.path.dirname(os.path.realpath(__file__)),
+        # flask already sets up logging
+        allow_logging_basic_config=False)
+
+    # send exceptions from `app` to rollbar, using flask's signal system.
+    got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+```
+
+- I added endpoint to check error triggered with rollbar
+```
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
+```
+I added roll bar to my docker compose file then i ran `docker compose up`
+`ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"`
+
+
