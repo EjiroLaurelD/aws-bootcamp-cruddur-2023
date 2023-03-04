@@ -5,7 +5,7 @@
 - export HONEYCOMB_API_KEY=redacted
 - gp env HONEYCOMB_API_KEY=redacted
 
-- I configured OTEL (open telemetry) to send to honeycomb
+- I Instrumented the backend  application to use Open Telemetry(OTEL) with honeycomb.io as the provider
 ```
       OTEL_SERVICE_NAME: "backend-flask"
       OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
@@ -63,6 +63,7 @@ RequestsInstrumentor().instrument()
 
 
 - I copied the codes from https://docs.honeycomb.io/getting-data-in/opentelemetry/python/  to create spans in home.activities file
+- I ran queries to see the traces within Honeycomb.
 
 ![honeycomb-trace](assets/trace.png)  
 ![honeycomb-span](assets/spans.png)  
@@ -101,7 +102,7 @@ cd into back-end flask , create xray.json file
 - I created sampling rules with the code
 `aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json`
 
-- I added  xray-daemon to my docker compose file 
+- I configured and provisioned X-Ray daemon within docker-compose and sent data back to X-Ray API.
 ```
   xray-daemon:
     image: "amazon/aws-xray-daemon"
@@ -119,7 +120,7 @@ cd into back-end flask , create xray.json file
       AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
       AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
 ```
-- I edited the app.py file to include xray
+- I edited the app.py file to implement AWS X-Ray into backend flask application
 
 ```
 from aws_xray_sdk.core import xray_recorder
@@ -130,6 +131,7 @@ xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
 XRayMiddleware(app, xray_recorder)
 ```
 - I ran docker compose up and xray traces was successfully sent
+- I observed the X-Ray traces within the AWS Console.
 ![aws-tray](assets/traces.png)  
 ![aws-tray](assets/trace1.png)  
 ![aws-tray](assets/tracemap.png)  
