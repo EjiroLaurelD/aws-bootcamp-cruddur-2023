@@ -6,7 +6,7 @@
 `npm i aws-amplify --save`
 
 - I set my cognito user pool user with this code on the command line
-`aws cognito-idp admin-set-user-password --username laurel --password Ejiroghene10@ --user-pool-id us-east-1_cqUcwvnM9 --permanent`
+`aws cognito-idp admin-set-user-password --username laurel --password mypassword --user-pool-id us-east-1_cqUcwvnM9 --permanent`
 
-- I implemented recover password
+- I implemented recovery password
 ![recovery](./assets/recovery.png)
