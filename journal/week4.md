@@ -25,4 +25,22 @@ aws rds create-db-instance \
 
 I connected to postgress locally using the command 
 `psql -Upostgres --host localhost`
+I created database cruddur
+`CREATE database cruddur;`
+I created schema.sql file in a db directory i created in the backend
 
+I added UUID Extention by adding this code to my schema.sql file
+`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`
+then imported the command with the following code
+`psql cruddur < db/schema.sql -h localhost -U postgres`
+
+I made the connection url for my psql an environment variable in my schema file with the code
+`export CONNECTION_URL="postgresql://postgres:password@localhost:5432/cruddur"`
+`gp env CONNECTION_URL="postgresql://postgres:password@localhost:5432/cruddur"`
+I also set the environment variable for production url on gitpod
+
+I created a bin directory and made 3 files in it 
+db_create db_drop and db_shcema_load then i dropped my database using the command `./db-drop`
+
+I created extra files in the directory, db_connect which i used to connect directly to the database to view my tables using the psql command `\dt`
+![db](./assets/db.png)
